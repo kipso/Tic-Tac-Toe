@@ -6,8 +6,8 @@ For choosing the best spot for computer we use "miniMax" algorithm. Like a profe
 
 A Minimax algorithm can be best defined as a recursive function that does the following things:
 
--return a value if a terminal state is found (+10, 0, -10)
--go through available spots on the board
+1.return a value if a terminal state is found (+10, 0, -10)
+2.go through available spots on the board
 -call the minimax function on each available spot (recursion)
 -evaluate returning values from function calls
 -and return the best value
