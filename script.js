@@ -114,7 +114,7 @@ function declareWinner(winner) {
 
 function miniMax(board, player) {
     let availSpots = emptySpots(board);
-
+    // return the terminal state score
     if(checkWin(board, player)) {
         return {score: -10};
     } else if (checkWin(board, aiPlayer)) {
@@ -124,7 +124,7 @@ function miniMax(board, player) {
     }
 
     var moves = [];
-
+    // recursion to find all the possible moves
     for (let i = 0; i < availSpots.length; i++) {
         let move ={};
         move.index = board[availSpots[i]];
@@ -140,7 +140,8 @@ function miniMax(board, player) {
         board[availSpots[i]] = move.index;
         moves.push(move);
     }
-
+    // chose the best move based on the terminal scoe:
+    // max-aiPlayer , min-huPlayer 
     let bestMove;
     if(player === aiPlayer){
         let bestScore = -100000;
